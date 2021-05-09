@@ -18,6 +18,8 @@ struct ItemPillView: View {
     var image: Image
     var priceText: Text
     
+    @State var presentDetails: Bool = false
+    
     init(geometry: GeometryProxy, title: String, subtitle: String, deal: Bool, price: String, oldPrice: String, image: Image) {
         self.geometry = geometry
         self.title = title
@@ -54,6 +56,10 @@ struct ItemPillView: View {
                 .padding(12)
             }
         }
+        .onTapGesture {
+            print(title)
+            presentDetails.toggle()
+        }
         .padding()
         .frame(maxWidth: geometry.size.width)
         .background(Color.white)
@@ -61,5 +67,16 @@ struct ItemPillView: View {
                     RoundedRectangle(cornerRadius: 12)
                         .stroke(Color("GroverLightGrey"), lineWidth: 2)
                 )
+        .fullScreenCover(isPresented: $presentDetails, content: {
+            ProductDetailView(geometry: geometry,
+                              title: title,
+                              subtitle: subtitle,
+                              deal: deal,
+                              price: price,
+                              oldPrice: oldPrice,
+                              image: image,
+                              presentDetails: $presentDetails
+            )
+        })
     }
 }
