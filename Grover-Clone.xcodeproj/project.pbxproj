@@ -26,6 +26,11 @@
 		3074630826482D53005C52A7 /* FeedSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074630726482D53005C52A7 /* FeedSeparator.swift */; };
 		3074630B26482F93005C52A7 /* ItemPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074630A26482F93005C52A7 /* ItemPillView.swift */; };
 		3074630E26483D81005C52A7 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074630D26483D81005C52A7 /* ProductDetailView.swift */; };
+		30B20AD826485AE70055A278 /* DetailsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B20AD726485AE70055A278 /* DetailsFooterView.swift */; };
+		30B20ADB26485E5A0055A278 /* RentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B20ADA26485E5A0055A278 /* RentButton.swift */; };
+		30B20ADD264862D70055A278 /* ProductDetailsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B20ADC264862D70055A278 /* ProductDetailsHeader.swift */; };
+		30B20AE02648650A0055A278 /* ProductDetailsPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B20ADF2648650A0055A278 /* ProductDetailsPillView.swift */; };
+		30BD476F264853760079DD2D /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD476E264853760079DD2D /* Products.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,11 @@
 		3074630726482D53005C52A7 /* FeedSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSeparator.swift; sourceTree = "<group>"; };
 		3074630A26482F93005C52A7 /* ItemPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPillView.swift; sourceTree = "<group>"; };
 		3074630D26483D81005C52A7 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		30B20AD726485AE70055A278 /* DetailsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFooterView.swift; sourceTree = "<group>"; };
+		30B20ADA26485E5A0055A278 /* RentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentButton.swift; sourceTree = "<group>"; };
+		30B20ADC264862D70055A278 /* ProductDetailsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsHeader.swift; sourceTree = "<group>"; };
+		30B20ADF2648650A0055A278 /* ProductDetailsPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsPillView.swift; sourceTree = "<group>"; };
+		30BD476E264853760079DD2D /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,7 @@
 		307462D1264800D4005C52A7 /* Grover-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				30BD476D264853670079DD2D /* GroverModel */,
 				307462E6264807B7005C52A7 /* Helper Files */,
 				307462E226480621005C52A7 /* Views */,
 				307462D2264800D4005C52A7 /* Grover_CloneApp.swift */,
@@ -106,6 +117,7 @@
 		307462E226480621005C52A7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				30B20AD926485E4E0055A278 /* RentButton */,
 				3074630C26483D75005C52A7 /* ProductDetails */,
 				307463002648205A005C52A7 /* Footer */,
 				307462F726480CEC005C52A7 /* Header */,
@@ -199,9 +211,36 @@
 		3074630C26483D75005C52A7 /* ProductDetails */ = {
 			isa = PBXGroup;
 			children = (
+				30B20ADE264864F90055A278 /* ProductDetailsPill */,
+				30B20AD726485AE70055A278 /* DetailsFooterView.swift */,
 				3074630D26483D81005C52A7 /* ProductDetailView.swift */,
+				30B20ADC264862D70055A278 /* ProductDetailsHeader.swift */,
 			);
 			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		30B20AD926485E4E0055A278 /* RentButton */ = {
+			isa = PBXGroup;
+			children = (
+				30B20ADA26485E5A0055A278 /* RentButton.swift */,
+			);
+			path = RentButton;
+			sourceTree = "<group>";
+		};
+		30B20ADE264864F90055A278 /* ProductDetailsPill */ = {
+			isa = PBXGroup;
+			children = (
+				30B20ADF2648650A0055A278 /* ProductDetailsPillView.swift */,
+			);
+			path = ProductDetailsPill;
+			sourceTree = "<group>";
+		};
+		30BD476D264853670079DD2D /* GroverModel */ = {
+			isa = PBXGroup;
+			children = (
+				30BD476E264853760079DD2D /* Products.swift */,
+			);
+			path = GroverModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,23 +312,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B20AE02648650A0055A278 /* ProductDetailsPillView.swift in Sources */,
 				30746306264829DE005C52A7 /* HomeAdView.swift in Sources */,
 				30746304264820B6005C52A7 /* FooterButton.swift in Sources */,
 				307462E8264807C4005C52A7 /* ViewRouter.swift in Sources */,
 				3074630E26483D81005C52A7 /* ProductDetailView.swift in Sources */,
+				30B20AD826485AE70055A278 /* DetailsFooterView.swift in Sources */,
 				307462FB26480D01005C52A7 /* HeaderView.swift in Sources */,
 				307462FD26480D51005C52A7 /* HeaderButton.swift in Sources */,
 				307462F026480A0D005C52A7 /* MenuView.swift in Sources */,
 				3074630826482D53005C52A7 /* FeedSeparator.swift in Sources */,
 				307462ED264808BF005C52A7 /* ContentView.swift in Sources */,
+				30BD476F264853760079DD2D /* Products.swift in Sources */,
 				3074630B26482F93005C52A7 /* ItemPillView.swift in Sources */,
 				307462E526480631005C52A7 /* HomeView.swift in Sources */,
 				307462F626480A47005C52A7 /* AccountView.swift in Sources */,
 				307462F326480A2F005C52A7 /* ShoppingBagView.swift in Sources */,
 				307462FF26480F16005C52A7 /* HeaderSearchBar.swift in Sources */,
+				30B20ADB26485E5A0055A278 /* RentButton.swift in Sources */,
 				3074630226482064005C52A7 /* FooterView.swift in Sources */,
 				307462EB264808AC005C52A7 /* SearchResults.swift in Sources */,
 				307462D3264800D4005C52A7 /* Grover_CloneApp.swift in Sources */,
+				30B20ADD264862D70055A278 /* ProductDetailsHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
