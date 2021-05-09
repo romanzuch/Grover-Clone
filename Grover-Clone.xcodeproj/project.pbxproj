@@ -20,6 +20,7 @@
 		307462D6264800D6005C52A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307462D9264800D6005C52A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		307462DB264800D6005C52A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		307462E1264800F0005C52A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +37,7 @@
 		307462C6264800D3005C52A7 = {
 			isa = PBXGroup;
 			children = (
+				307462E1264800F0005C52A7 /* README.md */,
 				307462D1264800D4005C52A7 /* Grover-Clone */,
 				307462D0264800D4005C52A7 /* Products */,
 			);
@@ -280,7 +282,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rz.Grover-Clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rz.Grover-Clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
