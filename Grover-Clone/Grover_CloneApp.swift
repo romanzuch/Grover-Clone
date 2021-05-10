@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct Grover_CloneApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
     
     @StateObject var viewRouter = ViewRouter()
     
