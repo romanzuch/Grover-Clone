@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3068AB5026497AF3006E5F28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3068AB4F26497AF3006E5F28 /* GoogleService-Info.plist */; };
 		307462D3264800D4005C52A7 /* Grover_CloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307462D2264800D4005C52A7 /* Grover_CloneApp.swift */; };
 		307462D7264800D6005C52A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307462D6264800D6005C52A7 /* Assets.xcassets */; };
 		307462DA264800D6005C52A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307462D9264800D6005C52A7 /* Preview Assets.xcassets */; };
@@ -31,9 +32,15 @@
 		30B20ADD264862D70055A278 /* ProductDetailsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B20ADC264862D70055A278 /* ProductDetailsHeader.swift */; };
 		30B20AE02648650A0055A278 /* ProductDetailsPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B20ADF2648650A0055A278 /* ProductDetailsPillView.swift */; };
 		30BD476F264853760079DD2D /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD476E264853760079DD2D /* Products.swift */; };
+		30F191D8264987A400EEB454 /* ProductsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F191D7264987A400EEB454 /* ProductsRepository.swift */; };
+		AB9A4D90D8967FD321795E50 /* Pods_Grover_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048384682C18E9BDECFE4DED /* Pods_Grover_Clone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		048384682C18E9BDECFE4DED /* Pods_Grover_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grover_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2754C7DC3B6C7DE56F45E5 /* Pods-Grover-Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grover-Clone.release.xcconfig"; path = "Target Support Files/Pods-Grover-Clone/Pods-Grover-Clone.release.xcconfig"; sourceTree = "<group>"; };
+		198EE4BA35BE3EFD9BC42A46 /* Pods-Grover-Clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grover-Clone.debug.xcconfig"; path = "Target Support Files/Pods-Grover-Clone/Pods-Grover-Clone.debug.xcconfig"; sourceTree = "<group>"; };
+		3068AB4F26497AF3006E5F28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		307462CF264800D4005C52A7 /* Grover-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grover-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		307462D2264800D4005C52A7 /* Grover_CloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grover_CloneApp.swift; sourceTree = "<group>"; };
 		307462D6264800D6005C52A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +68,7 @@
 		30B20ADC264862D70055A278 /* ProductDetailsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsHeader.swift; sourceTree = "<group>"; };
 		30B20ADF2648650A0055A278 /* ProductDetailsPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsPillView.swift; sourceTree = "<group>"; };
 		30BD476E264853760079DD2D /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		30F191D7264987A400EEB454 /* ProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB9A4D90D8967FD321795E50 /* Pods_Grover_Clone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +89,8 @@
 				307462E1264800F0005C52A7 /* README.md */,
 				307462D1264800D4005C52A7 /* Grover-Clone */,
 				307462D0264800D4005C52A7 /* Products */,
+				698A306115E69374CDD73275 /* Pods */,
+				7636B91958DD042A9C642D3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +111,7 @@
 				307462D2264800D4005C52A7 /* Grover_CloneApp.swift */,
 				307462EC264808BF005C52A7 /* ContentView.swift */,
 				307462D6264800D6005C52A7 /* Assets.xcassets */,
+				3068AB4F26497AF3006E5F28 /* GoogleService-Info.plist */,
 				307462DB264800D6005C52A7 /* Info.plist */,
 				307462D8264800D6005C52A7 /* Preview Content */,
 			);
@@ -145,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				307462E7264807C4005C52A7 /* ViewRouter.swift */,
+				30F191D7264987A400EEB454 /* ProductsRepository.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -243,6 +256,23 @@
 			path = GroverModel;
 			sourceTree = "<group>";
 		};
+		698A306115E69374CDD73275 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				198EE4BA35BE3EFD9BC42A46 /* Pods-Grover-Clone.debug.xcconfig */,
+				0A2754C7DC3B6C7DE56F45E5 /* Pods-Grover-Clone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7636B91958DD042A9C642D3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				048384682C18E9BDECFE4DED /* Pods_Grover_Clone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,9 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 307462DE264800D6005C52A7 /* Build configuration list for PBXNativeTarget "Grover-Clone" */;
 			buildPhases = (
+				8C4FFA3EA54A14D5CFABE55C /* [CP] Check Pods Manifest.lock */,
 				307462CB264800D3005C52A7 /* Sources */,
 				307462CC264800D3005C52A7 /* Frameworks */,
 				307462CD264800D3005C52A7 /* Resources */,
+				EE4B3E833D1A86C31CC1631D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,10 +334,53 @@
 			files = (
 				307462DA264800D6005C52A7 /* Preview Assets.xcassets in Resources */,
 				307462D7264800D6005C52A7 /* Assets.xcassets in Resources */,
+				3068AB5026497AF3006E5F28 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8C4FFA3EA54A14D5CFABE55C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Grover-Clone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE4B3E833D1A86C31CC1631D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Grover-Clone/Pods-Grover-Clone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Grover-Clone/Pods-Grover-Clone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Grover-Clone/Pods-Grover-Clone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		307462CB264800D3005C52A7 /* Sources */ = {
@@ -327,6 +402,7 @@
 				3074630B26482F93005C52A7 /* ItemPillView.swift in Sources */,
 				307462E526480631005C52A7 /* HomeView.swift in Sources */,
 				307462F626480A47005C52A7 /* AccountView.swift in Sources */,
+				30F191D8264987A400EEB454 /* ProductsRepository.swift in Sources */,
 				307462F326480A2F005C52A7 /* ShoppingBagView.swift in Sources */,
 				307462FF26480F16005C52A7 /* HeaderSearchBar.swift in Sources */,
 				30B20ADB26485E5A0055A278 /* RentButton.swift in Sources */,
@@ -458,6 +534,7 @@
 		};
 		307462DF264800D6005C52A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 198EE4BA35BE3EFD9BC42A46 /* Pods-Grover-Clone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -480,6 +557,7 @@
 		};
 		307462E0264800D6005C52A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A2754C7DC3B6C7DE56F45E5 /* Pods-Grover-Clone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
