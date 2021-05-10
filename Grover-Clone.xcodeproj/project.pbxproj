@@ -33,6 +33,7 @@
 		30B20AE02648650A0055A278 /* ProductDetailsPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B20ADF2648650A0055A278 /* ProductDetailsPillView.swift */; };
 		30BD476F264853760079DD2D /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD476E264853760079DD2D /* Products.swift */; };
 		30F191D8264987A400EEB454 /* ProductsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F191D7264987A400EEB454 /* ProductsRepository.swift */; };
+		30F191DA264990CF00EEB454 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 30F191D9264990CF00EEB454 /* .gitignore */; };
 		AB9A4D90D8967FD321795E50 /* Pods_Grover_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048384682C18E9BDECFE4DED /* Pods_Grover_Clone.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		30B20ADF2648650A0055A278 /* ProductDetailsPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsPillView.swift; sourceTree = "<group>"; };
 		30BD476E264853760079DD2D /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		30F191D7264987A400EEB454 /* ProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRepository.swift; sourceTree = "<group>"; };
+		30F191D9264990CF00EEB454 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		307462C6264800D3005C52A7 = {
 			isa = PBXGroup;
 			children = (
+				30F191D9264990CF00EEB454 /* .gitignore */,
 				307462E1264800F0005C52A7 /* README.md */,
 				307462D1264800D4005C52A7 /* Grover-Clone */,
 				307462D0264800D4005C52A7 /* Products */,
@@ -332,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F191DA264990CF00EEB454 /* .gitignore in Resources */,
 				307462DA264800D6005C52A7 /* Preview Assets.xcassets in Resources */,
 				307462D7264800D6005C52A7 /* Assets.xcassets in Resources */,
 				3068AB5026497AF3006E5F28 /* GoogleService-Info.plist in Resources */,
