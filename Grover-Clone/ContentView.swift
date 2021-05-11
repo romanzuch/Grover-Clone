@@ -16,6 +16,9 @@ struct ContentView: View {
     // MARK: - state properties for managing user search queries
     @State private var searchTerm: String = ""
     
+    // MARK: - products repository
+    @ObservedObject var productsRepo: ProductsRepository = ProductsRepository()
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -30,11 +33,14 @@ struct ContentView: View {
                 } else {
                     switch viewRouter.currentPage {
                     case .home:
-                        HomeView(geometry: geometry)
+                        HomeView(geometry: geometry, products: productsRepo.products)
                     case .menu:
                         MenuView()
                     case .shoppingBag:
-                        ShoppingBagView()
+                        ShoppingBagView(products: productsRepo.products)
+                            .onAppear {
+                                print(productsRepo.products)
+                            }
                     case .account:
                         AccountView()
                     }
@@ -46,6 +52,5 @@ struct ContentView: View {
                     .frame(width: geometry.size.width, height: geometry.size.height/10)
             }
         }
-        
     }
 }
