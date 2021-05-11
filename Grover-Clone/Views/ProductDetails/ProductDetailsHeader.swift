@@ -10,10 +10,12 @@ import SwiftUI
 struct ProductDetailsHeader: View {
     
     var geometry: GeometryProxy
+    var category: String
     @Binding var presentationMode: PresentationMode
     
-    init(geometry: GeometryProxy, presentationMode: Binding<PresentationMode>) {
+    init(geometry: GeometryProxy, category: String, presentationMode: Binding<PresentationMode>) {
         self.geometry = geometry
+        self.category = category
         self._presentationMode = presentationMode
     }
     
@@ -21,7 +23,7 @@ struct ProductDetailsHeader: View {
         HStack {
             HStack {
                 Image(systemName: "chevron.backward")
-                Text("Kategorie")
+                Text("\(category.capitalized)")
                     .font(.subheadline).fontWeight(.light)
             }
             Spacer()
