@@ -10,30 +10,28 @@ import SwiftUI
 struct HomeView: View {
     
     var geometry: GeometryProxy
-    var products = Products()
+    var products: [Product]
     
-    init(geometry: GeometryProxy) {
+    init(geometry: GeometryProxy, products: [Product]) {
         self.geometry = geometry
+        self.products = products
     }
     
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
-            HomeAdView(geometry: geometry)
+            VStack(alignment: .leading) {
+                HomeAdView(geometry: geometry)
+                    .padding(.horizontal, 12)
+                    .padding(.top, 24)
+                ForEach(products, id: \.self) { product in
+                    ItemPillView(geometry: geometry, title: product.name, description: product.description, deal: product.deal, price: product.prices[3], discount: product.discount, image: Image("apple_watch_6")
+                    )
+                    .padding(.vertical, 6)
+                }
                 .padding(.horizontal, 12)
-                .padding(.top, 24)
-            ForEach(Array(products.productTitles.enumerated()), id: \.offset) { offset, item in
-                ItemPillView(geometry: geometry,
-                             title: item,
-                             subtitle: products.productSubTitle[offset],
-                             deal: products.deals[offset],
-                             price: products.productPrices[offset],
-                             oldPrice: products.productOldPrices[offset],
-                             image: Image(products.imageNames[offset])
-                )
-                .padding(.vertical, 6)
             }
-            .padding(.horizontal, 12)
+            .frame(width: geometry.size.width)
         }
         
     }
