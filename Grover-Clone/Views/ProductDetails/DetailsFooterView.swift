@@ -22,7 +22,7 @@ struct DetailsFooterView: View {
         self.geometry = geometry
         self.deal = deal
         self.price = price
-        self.oldPrice = price - Float(discount)
+        self.oldPrice = price + Float(discount)
         
         if deal {
             self.priceText = Text("\(String(format: "%.2f € ", oldPrice))").font(.title3).fontWeight(.bold).strikethrough() + Text("\(String(format: "%.2f € ", price))").font(.title).fontWeight(.bold).foregroundColor(Color("GroverPink"))
