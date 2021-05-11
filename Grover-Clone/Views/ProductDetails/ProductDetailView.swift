@@ -18,18 +18,20 @@ struct ProductDetailView: View {
     var discount: Int
     var image: Image
     var priceText: Text
+    var category: String
     
     @Environment(\.presentationMode) var presentationMode
     
-    init(geometry: GeometryProxy, title: String, subtitle: String, deal: Bool, price: Float, discount: Int, image: Image, presentDetails: Binding<Bool>) {
+    init(geometry: GeometryProxy, title: String, subtitle: String, deal: Bool, price: Float, discount: Int, category: String, image: Image, presentDetails: Binding<Bool>) {
         self.geometry = geometry
         self.title = title
         self.subtitle = subtitle
         self.deal = deal
         self.price = price
         self.discount = discount
-        self.oldPrice = price - Float(discount)
+        self.oldPrice = price + Float(discount)
         self.image = image
+        self.category = category
         
         if deal {
             self.priceText = Text("ab ") + Text("\(String(format: "%.2f € ", oldPrice)) ").fontWeight(.bold).strikethrough() + Text("\(String(format: "%.2f € ", price))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat")
@@ -42,6 +44,7 @@ struct ProductDetailView: View {
     var body: some View {
         VStack {
             ProductDetailsHeader(geometry: geometry,
+                                 category: category,
                                  presentationMode: presentationMode)
                 .padding(.horizontal, 12)
             
