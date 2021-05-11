@@ -11,8 +11,8 @@ struct RentButton: View {
     
     var productId: String
     
-    init(productId: String) {
-        self.productId = productId
+    init(productId: Float) {
+        self.productId = String(productId)
     }
     
     var body: some View {

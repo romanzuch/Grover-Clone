@@ -11,23 +11,23 @@ struct DetailsFooterView: View {
     
     var geometry: GeometryProxy
     var deal: Bool
-    var price: String
-    var oldPrice: String
+    var price: Float
+    var oldPrice: Float
     var priceText: Text
     
     init(geometry: GeometryProxy,
          deal: Bool,
-         price: String,
-         oldPrice: String) {
+         price: Float,
+         discount: Int) {
         self.geometry = geometry
         self.deal = deal
         self.price = price
-        self.oldPrice = oldPrice
+        self.oldPrice = price - Float(discount)
         
         if deal {
-            self.priceText = Text("\(oldPrice)€ ").font(.title3).fontWeight(.bold).strikethrough() + Text("\(price)€").font(.title).fontWeight(.bold).foregroundColor(Color("GroverPink"))
+            self.priceText = Text("\(String(format: "%.2f € ", oldPrice))").font(.title3).fontWeight(.bold).strikethrough() + Text("\(String(format: "%.2f € ", price))").font(.title).fontWeight(.bold).foregroundColor(Color("GroverPink"))
         } else {
-            self.priceText = Text("\(price)€ ").font(.title).fontWeight(.bold).foregroundColor(Color("GroverPink"))
+            self.priceText = Text("\(String(format: "%.2f € ", price))").font(.title).fontWeight(.bold).foregroundColor(Color("GroverPink"))
         }
         
     }
