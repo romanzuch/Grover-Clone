@@ -18,23 +18,25 @@ struct ItemPillView: View {
     var discount: Int
     var image: Image
     var priceText: Text
+    var category: String
     
     @State var presentDetails: Bool = false
     
-    init(geometry: GeometryProxy, title: String, description: String, deal: Bool, price: Float, discount: Int, image: Image) {
+    init(geometry: GeometryProxy, title: String, description: String, category: String, deal: Bool, price: Float, discount: Int, image: Image) {
         self.geometry = geometry
         self.title = title
         self.description = description
         self.deal = deal
         self.price = price
         self.discount = discount
-        self.oldPrice = price - Float(discount)
+        self.oldPrice = price + Float(discount)
         self.image = image
+        self.category = category
         
         if deal {
-            self.priceText = Text("ab ") + Text("\(String(format: "%.2f € ", oldPrice))").fontWeight(.bold).strikethrough() + Text("\(String(format: "%.2f € ", price))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat")
+            self.priceText = Text("ab ").font(.footnote) + Text("\(String(format: "%.2f € ", oldPrice))").fontWeight(.bold).strikethrough() + Text("\(String(format: "%.2f € ", price))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat").font(.footnote)
         } else {
-            self.priceText = Text("ab ") +  Text("\(String(format: "%.2f € ", price))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat")
+            self.priceText = Text("ab ").font(.footnote) +  Text("\(String(format: "%.2f € ", price))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat").font(.footnote)
         }
         
     }
@@ -76,6 +78,7 @@ struct ItemPillView: View {
                               deal: deal,
                               price: price,
                               discount: discount,
+                              category: category,
                               image: image,
                               presentDetails: $presentDetails
             )
