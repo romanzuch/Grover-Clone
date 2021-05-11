@@ -37,10 +37,7 @@ struct ContentView: View {
                     case .menu:
                         MenuView()
                     case .shoppingBag:
-                        ShoppingBagView(products: productsRepo.products)
-                            .onAppear {
-                                print(productsRepo.products)
-                            }
+                        ShoppingBagView()
                     case .account:
                         AccountView()
                     }
