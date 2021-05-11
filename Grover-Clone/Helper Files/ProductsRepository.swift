@@ -16,6 +16,12 @@ class ProductsRepository: ObservableObject {
     
     @Published var products = [Product]()
     
+    init() {
+        DispatchQueue.main.async {
+            self.loadData()
+        }
+    }
+    
     func loadData() {
         self.db.collection("products")
         .addSnapshotListener { [self] (querySnapshot, error) in
@@ -35,15 +41,15 @@ class ProductsRepository: ObservableObject {
     
 }
 
-struct Product: Codable, Identifiable {
+struct Product: Codable, Identifiable, Hashable {
     @DocumentID var id: String?
     var category: String
     var colors: [String]
     var deal: Bool
     var description: String
     var discount: Int
-    var images: [URL]
+    var images: [String]
     var name: String
-    var prices: [Int]
-    var rating: Int
+    var prices: [Float]
+    var rating: Float
 }
