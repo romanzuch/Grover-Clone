@@ -24,7 +24,7 @@ struct FooterView: View {
                 .shadow(color: .black.opacity(0.25), radius: 10, x: 0.0, y: 0.0)
             HStack {
                 FooterButton(title: "Für dich", icon: "GroverLogo", viewRouter: viewRouter, destination: Page.home, geometry: geometry)
-                FooterButton(title: "Gemietet", icon: "homepod.2", viewRouter: viewRouter, destination: Page.menu, geometry: geometry)
+                FooterButton(title: "Gemietet", icon: "homepod.2", viewRouter: viewRouter, destination: Page.rented, geometry: geometry)
                 FooterButton(title: "Konto", icon: "person.circle", viewRouter: viewRouter, destination: Page.account, geometry: geometry)
             }
             .padding(.bottom, -12)
