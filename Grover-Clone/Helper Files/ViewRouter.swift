@@ -15,7 +15,7 @@ class ViewRouter: ObservableObject {
 
 enum Page {
     case home
-    case menu
     case shoppingBag
     case account
+    case rented
 }
