@@ -25,7 +25,7 @@ struct HomeView: View {
                     .padding(.horizontal, 12)
                     .padding(.top, 24)
                 ForEach(products, id: \.self) { product in
-                    ItemPillView(geometry: geometry, title: product.name, description: product.description, category: product.category, deal: product.deal, price: product.prices[3], discount: product.discount, image: Image("apple_watch_6")
+                    ItemPillView(geometry: geometry, title: product.name, description: product.description, category: product.category, deal: product.deal, price: product.prices[0], discount: product.discount, image: Image("apple_watch_6")
                     )
                     .padding(.vertical, 6)
                 }
