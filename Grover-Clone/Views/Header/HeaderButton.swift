@@ -15,7 +15,7 @@ struct HeaderButton: View {
     var viewRouter: ViewRouter
     var destination: Page
     
-    init(height: CGFloat, width: CGFloat, destination: Page, icon: String, viewRouter: ViewRouter) {
+    init(height: CGFloat, width: CGFloat, icon: String, destination: Page, viewRouter: ViewRouter) {
         self.height = height
         self.width = width
         self.destination = destination
@@ -25,7 +25,11 @@ struct HeaderButton: View {
     
     var body: some View {
         Button(action: {
-            viewRouter.currentPage = destination
+            if viewRouter.currentPage == destination {
+                viewRouter.currentPage = Page.home
+            } else {
+                viewRouter.currentPage = destination
+            }
         }, label: {
             Image(systemName: icon)
                 .foregroundColor(.black)
