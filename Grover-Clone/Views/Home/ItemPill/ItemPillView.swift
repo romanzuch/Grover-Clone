@@ -74,12 +74,12 @@ struct ItemPillView: View {
         .fullScreenCover(isPresented: $presentDetails, content: {
             ProductDetailView(geometry: geometry,
                               title: title,
-                              subtitle: description,
+                              description: description,
                               deal: deal,
                               price: price,
                               discount: discount,
                               category: category,
-                              image: image,
+                              image: [image, image, image],
                               presentDetails: $presentDetails
             )
         })
