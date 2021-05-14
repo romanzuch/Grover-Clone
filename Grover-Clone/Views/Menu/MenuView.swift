@@ -8,7 +8,21 @@
 import SwiftUI
 
 struct MenuView: View {
+    
+    var categories: [Category]
+    
+    init(categories: [Category]) {
+        self.categories = categories
+    }
+    
     var body: some View {
-        Text("Hello, MenuView.swift!")
+        VStack(alignment: .leading) {
+            ScrollView {
+                ForEach(categories[0].names, id:\.self) { category in
+                    Text(category)
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
+        }
     }
 }

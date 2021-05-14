@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct CategoryPageView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+    var category: String
+    
+    init(category: String) {
+        self.category = category
     }
-}
-
-struct CategoryPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryPageView()
+    
+    var body: some View {
+        Text(category)
     }
 }

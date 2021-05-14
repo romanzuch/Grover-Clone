@@ -15,14 +15,16 @@ class ProductsRepository: ObservableObject {
     let db = Firestore.firestore()
     
     @Published var products = [Product]()
+    @Published var categories = [Category]()
     
     init() {
         DispatchQueue.main.async {
-            self.loadData()
+            self.loadProducts()
+            self.loadCategories()
         }
     }
     
-    func loadData() {
+    func loadProducts() {
         self.db.collection("products")
         .addSnapshotListener { [self] (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
@@ -39,6 +41,23 @@ class ProductsRepository: ObservableObject {
         }
     }
     
+    func loadCategories() {
+        self.db.collection("categories")
+            .addSnapshotListener { [self] (querySnapshot, error) in
+                if let querySnapshot = querySnapshot {
+                    self.categories = querySnapshot.documents.compactMap { document in
+                        do {
+                            let data = try document.data(as: Category.self)
+                            return data
+                        } catch {
+                            print(error)
+                        }
+                        return nil
+                    }
+                }
+            }
+    }
+    
 }
 
 struct Product: Codable, Identifiable, Hashable {
@@ -52,4 +71,9 @@ struct Product: Codable, Identifiable, Hashable {
     var name: String
     var prices: [Float]
     var rating: Float
+}
+
+struct Category: Codable, Identifiable, Hashable {
+    @DocumentID var id: String?
+    var names: [String]
 }

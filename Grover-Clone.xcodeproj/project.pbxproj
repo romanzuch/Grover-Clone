@@ -34,6 +34,7 @@
 		30B20AE02648650A0055A278 /* ProductDetailsPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B20ADF2648650A0055A278 /* ProductDetailsPillView.swift */; };
 		30BD476F264853760079DD2D /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD476E264853760079DD2D /* Products.swift */; };
 		30CF655E264E627300C4B64D /* CategoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF655D264E627300C4B64D /* CategoryPageView.swift */; };
+		30CF6560264E6EFB00C4B64D /* HeaderMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF655F264E6EFB00C4B64D /* HeaderMenuButton.swift */; };
 		30F191D8264987A400EEB454 /* ProductsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F191D7264987A400EEB454 /* ProductsRepository.swift */; };
 		30F191DA264990CF00EEB454 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 30F191D9264990CF00EEB454 /* .gitignore */; };
 		AB9A4D90D8967FD321795E50 /* Pods_Grover_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048384682C18E9BDECFE4DED /* Pods_Grover_Clone.framework */; };
@@ -73,6 +74,7 @@
 		30B20ADF2648650A0055A278 /* ProductDetailsPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsPillView.swift; sourceTree = "<group>"; };
 		30BD476E264853760079DD2D /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		30CF655D264E627300C4B64D /* CategoryPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPageView.swift; sourceTree = "<group>"; };
+		30CF655F264E6EFB00C4B64D /* HeaderMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMenuButton.swift; sourceTree = "<group>"; };
 		30F191D7264987A400EEB454 /* ProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRepository.swift; sourceTree = "<group>"; };
 		30F191D9264990CF00EEB454 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +219,7 @@
 				307462FA26480D01005C52A7 /* HeaderView.swift */,
 				307462FC26480D51005C52A7 /* HeaderButton.swift */,
 				307462FE26480F16005C52A7 /* HeaderSearchBar.swift */,
+				30CF655F264E6EFB00C4B64D /* HeaderMenuButton.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				3074630226482064005C52A7 /* FooterView.swift in Sources */,
 				307462EB264808AC005C52A7 /* SearchResults.swift in Sources */,
 				307462D3264800D4005C52A7 /* Grover_CloneApp.swift in Sources */,
+				30CF6560264E6EFB00C4B64D /* HeaderMenuButton.swift in Sources */,
 				30B20ADD264862D70055A278 /* ProductDetailsHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

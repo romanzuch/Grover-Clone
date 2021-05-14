@@ -35,7 +35,7 @@ struct ContentView: View {
                     case .home:
                         ZStack {
                             if self.showMenu {
-                                MenuView()
+                                MenuView(categories: productsRepo.categories)
                                     .frame(width: geometry.size.width / 2)
                                     .transition(.move(edge: .leading))
                             }
@@ -46,7 +46,7 @@ struct ContentView: View {
                     case .shoppingBag:
                         ZStack {
                             if self.showMenu {
-                                MenuView()
+                                MenuView(categories: productsRepo.categories)
                                     .frame(width: geometry.size.width / 2)
                                     .transition(.move(edge: .leading))
                             }
@@ -57,7 +57,7 @@ struct ContentView: View {
                     case .account:
                         ZStack {
                             if self.showMenu {
-                                MenuView()
+                                MenuView(categories: productsRepo.categories)
                                     .frame(width: geometry.size.width / 2)
                                     .transition(.move(edge: .leading))
                             }
@@ -68,7 +68,7 @@ struct ContentView: View {
                     case .rented:
                         ZStack {
                             if self.showMenu {
-                                MenuView()
+                                MenuView(categories: productsRepo.categories)
                                     .frame(width: geometry.size.width / 2)
                                     .transition(.move(edge: .leading))
                             }
