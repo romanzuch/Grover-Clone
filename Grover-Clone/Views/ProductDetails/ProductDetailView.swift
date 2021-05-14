@@ -11,21 +11,21 @@ struct ProductDetailView: View {
     
     var geometry: GeometryProxy
     var title: String
-    var subtitle: String
+    var description: String
     var deal: Bool
     var price: Float
     var oldPrice: Float
     var discount: Int
-    var image: Image
+    var image: [Image]
     var priceText: Text
     var category: String
     
     @Environment(\.presentationMode) var presentationMode
     
-    init(geometry: GeometryProxy, title: String, subtitle: String, deal: Bool, price: Float, discount: Int, category: String, image: Image, presentDetails: Binding<Bool>) {
+    init(geometry: GeometryProxy, title: String, description: String, deal: Bool, price: Float, discount: Int, category: String, image: [Image], presentDetails: Binding<Bool>) {
         self.geometry = geometry
         self.title = title
-        self.subtitle = subtitle
+        self.description = description
         self.deal = deal
         self.price = price
         self.discount = discount
@@ -48,17 +48,27 @@ struct ProductDetailView: View {
                                  presentationMode: presentationMode)
                 .padding(.horizontal, 12)
             
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxHeight: geometry.size.height * 0.2)
+            ScrollView {
+                TabView {
+                    ForEach(0..<image.count) { index in
+                        image[index]
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxHeight: geometry.size.height * 0.2)
+                            .padding()
+                            .tag(index)
+                    }
+                }
+                .tabViewStyle(PageTabViewStyle())
                 .padding()
-            
-            ProductDetailsPillView(geometry: geometry,
-                                   title: title,
-                                   subtitle: subtitle,
-                                   deal: deal)
-                .padding(.horizontal, 12)
+                .frame(width: geometry.size.width, height: geometry.size.height / 3)
+                
+                ProductDetailsPillView(geometry: geometry,
+                                       title: title,
+                                       description: description,
+                                       deal: deal)
+                    .padding(.horizontal, 12)
+            }
             
             Spacer()
             
