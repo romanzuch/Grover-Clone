@@ -24,7 +24,7 @@ struct ContentView: View {
         GeometryReader { geometry in
             VStack {
                 
-                HeaderView(geometry: geometry, viewRouter: viewRouter, searchTerm: $searchTerm)
+                HeaderView(geometry: geometry, viewRouter: viewRouter, searchTerm: $searchTerm, showMenu: $showMenu)
                 
                 Spacer()
                 
@@ -33,13 +33,49 @@ struct ContentView: View {
                 } else {
                     switch viewRouter.currentPage {
                     case .home:
-                        HomeView(geometry: geometry, products: productsRepo.products)
-                    case .menu:
-                        MenuView()
+                        ZStack {
+                            if self.showMenu {
+                                MenuView()
+                                    .frame(width: geometry.size.width / 2)
+                                    .transition(.move(edge: .leading))
+                            }
+                            HomeView(geometry: geometry, products: productsRepo.products)
+                            .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                            .disabled(self.showMenu ? true : false)
+                        }
                     case .shoppingBag:
-                        ShoppingBagView()
+                        ZStack {
+                            if self.showMenu {
+                                MenuView()
+                                    .frame(width: geometry.size.width / 2)
+                                    .transition(.move(edge: .leading))
+                            }
+                            ShoppingBagView()
+                                .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                                .disabled(self.showMenu ? true : false)
+                        }
                     case .account:
-                        AccountView()
+                        ZStack {
+                            if self.showMenu {
+                                MenuView()
+                                    .frame(width: geometry.size.width / 2)
+                                    .transition(.move(edge: .leading))
+                            }
+                            AccountView()
+                                .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                                .disabled(self.showMenu ? true : false)
+                        }
+                    case .rented:
+                        ZStack {
+                            if self.showMenu {
+                                MenuView()
+                                    .frame(width: geometry.size.width / 2)
+                                    .transition(.move(edge: .leading))
+                            }
+                            AccountView()
+                                .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                                .disabled(self.showMenu ? true : false)
+                        }
                     }
                 }
                 
