@@ -16,13 +16,13 @@ struct ProductDetailView: View {
     var price: Float
     var oldPrice: Float
     var discount: Int
-    var image: [Image]
+    var images: [String]
     var priceText: Text
     var category: String
     
     @Environment(\.presentationMode) var presentationMode
     
-    init(geometry: GeometryProxy, title: String, description: String, deal: Bool, price: Float, discount: Int, category: String, image: [Image], presentDetails: Binding<Bool>) {
+    init(geometry: GeometryProxy, title: String, description: String, deal: Bool, price: Float, discount: Int, category: String, images: [String], presentDetails: Binding<Bool>) {
         self.geometry = geometry
         self.title = title
         self.description = description
@@ -30,7 +30,7 @@ struct ProductDetailView: View {
         self.price = price
         self.discount = discount
         self.oldPrice = price + Float(discount)
-        self.image = image
+        self.images = images
         self.category = category
         
         if deal {
@@ -50,9 +50,8 @@ struct ProductDetailView: View {
             
             ScrollView {
                 TabView {
-                    ForEach(0..<image.count) { index in
-                        image[index]
-                            .resizable()
+                    ForEach(0..<images.count) { index in
+                        AsyncImage(url: URL(string: images[index])!, placeholder: { ImageLoaderPlaceholder() })
                             .aspectRatio(contentMode: .fit)
                             .frame(maxHeight: geometry.size.height * 0.2)
                             .padding()
