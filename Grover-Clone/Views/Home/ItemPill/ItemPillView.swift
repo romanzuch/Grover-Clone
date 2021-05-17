@@ -16,13 +16,13 @@ struct ItemPillView: View {
     var price: Float
     var oldPrice: Float
     var discount: Int
-    var image: Image
+    var images: [String]
     var priceText: Text
     var category: String
     
     @State var presentDetails: Bool = false
     
-    init(geometry: GeometryProxy, title: String, description: String, category: String, deal: Bool, price: Float, discount: Int, image: Image) {
+    init(geometry: GeometryProxy, title: String, description: String, category: String, deal: Bool, price: Float, discount: Int, images: [String]) {
         self.geometry = geometry
         self.title = title
         self.description = description
@@ -30,7 +30,7 @@ struct ItemPillView: View {
         self.price = price
         self.discount = discount
         self.oldPrice = price + Float(discount)
-        self.image = image
+        self.images = images
         self.category = category
         
         if deal {
@@ -46,8 +46,10 @@ struct ItemPillView: View {
         VStack {
             
             HStack {
-                image
-                    .resizable()
+                AsyncImage(
+                    url: URL(string: images[0])!,
+                    placeholder: { ImageLoaderPlaceholder() }
+                )
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: geometry.size.width * 0.2)
                 VStack(alignment: .leading) {
@@ -79,7 +81,7 @@ struct ItemPillView: View {
                               price: price,
                               discount: discount,
                               category: category,
-                              image: [image, image, image],
+                              images: images,
                               presentDetails: $presentDetails
             )
         })
