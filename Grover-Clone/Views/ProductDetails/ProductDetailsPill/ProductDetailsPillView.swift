@@ -13,19 +13,21 @@ struct ProductDetailsPillView: View {
     var title: String
     var description: String
     var deal: Bool
+    var prices: [Float]
     
-    init(geometry: GeometryProxy,
-         title: String,
-         description: String,
-         deal: Bool) {
+    @Binding var selectedDuration: Int
+    
+    init(geometry: GeometryProxy, product: Product, selectedDurationPassed: Binding<Int>) {
         self.geometry = geometry
-        self.title = title
-        self.description = description
-        self.deal = deal
+        self.title = product.name
+        self.description = product.description
+        self.deal = product.deal
+        self.prices = product.prices
+        self._selectedDuration = selectedDurationPassed
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 16) {
             HStack {
                 if deal {
                     Text("Deal")
@@ -37,7 +39,7 @@ struct ProductDetailsPillView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 6.0, style: .continuous))
                 }
                 Spacer()
-                VStack {
+                HStack {
                     Image(systemName: "heart")
                         .padding(2)
                     Image(systemName: "square.and.arrow.up")
@@ -55,12 +57,21 @@ struct ProductDetailsPillView: View {
                     .padding(.vertical, 8)
             }
             
-            Group {
-                Label("GRATIS Grover Care", systemImage: "umbrella")
-                Label("Lieferung in 1-3 Werktagen", systemImage: "bus")
+            HStack {
+                Image(systemName: "umbrella")
+                let groverCareText: Text = Text("GRATIS").foregroundColor(.green) + Text(" Grover Care")
+                groverCareText
+            }
+            HStack {
+                Image(systemName: "bus")
+                let shippingDuration: String = "1-3"
+                let groverShippingText: Text = Text("Liefering in \(shippingDuration) Werktagen")
+                groverShippingText
             }
             
             Text("Wähle eine Mindestmietdauer")
+            
+            RentingDurationPicker(prices: prices, selectedDuration: $selectedDuration)
         }
         .padding()
         .background(Color.white)

@@ -13,39 +13,32 @@ struct ProductDetailView: View {
     var title: String
     var description: String
     var deal: Bool
-    var price: Float
-    var oldPrice: Float
+    var prices: [Float]
     var discount: Int
     var images: [String]
-    var priceText: Text
     var category: String
+    var product: Product
+    
+    @State private var selectedDuration: Int = 0
     
     @Environment(\.presentationMode) var presentationMode
     
-    init(geometry: GeometryProxy, title: String, description: String, deal: Bool, price: Float, discount: Int, category: String, images: [String], presentDetails: Binding<Bool>) {
+    init(geometry: GeometryProxy, product: Product, presentDetails: Binding<Bool>) {
+        self.product = product
         self.geometry = geometry
-        self.title = title
-        self.description = description
-        self.deal = deal
-        self.price = price
-        self.discount = discount
-        self.oldPrice = price + Float(discount)
-        self.images = images
-        self.category = category
-        
-        if deal {
-            self.priceText = Text("ab ") + Text("\(String(format: "%.2f € ", oldPrice)) ").fontWeight(.bold).strikethrough() + Text("\(String(format: "%.2f € ", price))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat")
-        } else {
-            self.priceText = Text("ab ") +  Text("\(String(format: "%.2f € ", price))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat")
-        }
+        self.title = product.name
+        self.description = product.description
+        self.deal = product.deal
+        self.prices = product.prices
+        self.discount = product.discount
+        self.images = product.images
+        self.category = product.category
         
     }
     
     var body: some View {
         VStack {
-            ProductDetailsHeader(geometry: geometry,
-                                 category: category,
-                                 presentationMode: presentationMode)
+            ProductDetailsHeader(geometry: geometry, category: category, presentationMode: presentationMode)
                 .padding(.horizontal, 12)
             
             ScrollView {
@@ -62,19 +55,15 @@ struct ProductDetailView: View {
                 .padding()
                 .frame(width: geometry.size.width, height: geometry.size.height / 3)
                 
-                ProductDetailsPillView(geometry: geometry,
-                                       title: title,
-                                       description: description,
-                                       deal: deal)
+                ProductDetailsPillView(geometry: geometry, product: product, selectedDurationPassed: $selectedDuration)
                     .padding(.horizontal, 12)
             }
             
             Spacer()
             
-            DetailsFooterView(geometry: geometry,
-                              deal: deal,
-                              price: price,
-                              discount: discount)
+            Text("\(selectedDuration)")
+            
+            DetailsFooterView(geometry: geometry, product: product, selectedDuration: $selectedDuration)
                 .frame(width: geometry.size.width, height: geometry.size.height/10)
         }
     }

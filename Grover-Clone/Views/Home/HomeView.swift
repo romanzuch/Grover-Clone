@@ -25,9 +25,11 @@ struct HomeView: View {
                     .padding(.horizontal, 12)
                     .padding(.top, 24)
                 ForEach(products, id: \.self) { product in
-                    ItemPillView(geometry: geometry, title: product.name, description: product.description, category: product.category, deal: product.deal, price: product.prices[0], discount: product.discount, images: product.images
-                    )
+                    ItemPillView(geometry: geometry, product: product)
                     .padding(.vertical, 6)
+                        .onAppear {
+                            print(product.id)
+                        }
                 }
                 .padding(.horizontal, 12)
             }

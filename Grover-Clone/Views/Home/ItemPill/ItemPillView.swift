@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ItemPillView: View {
     
+    var product: Product
     var geometry: GeometryProxy
     var title: String
     var description: String
     var deal: Bool
-    var price: Float
-    var oldPrice: Float
+    var prices: [Float]
     var discount: Int
     var images: [String]
     var priceText: Text
@@ -22,21 +22,21 @@ struct ItemPillView: View {
     
     @State var presentDetails: Bool = false
     
-    init(geometry: GeometryProxy, title: String, description: String, category: String, deal: Bool, price: Float, discount: Int, images: [String]) {
+    init(geometry: GeometryProxy, product: Product) {
+        self.product = product
         self.geometry = geometry
-        self.title = title
-        self.description = description
-        self.deal = deal
-        self.price = price
-        self.discount = discount
-        self.oldPrice = price + Float(discount)
-        self.images = images
-        self.category = category
+        self.title = product.name
+        self.description = product.description
+        self.deal = product.deal
+        self.prices = product.prices
+        self.discount = product.discount
+        self.images = product.images
+        self.category = product.category
         
         if deal {
-            self.priceText = Text("ab ").font(.footnote) + Text("\(String(format: "%.2f € ", oldPrice))").fontWeight(.bold).strikethrough() + Text("\(String(format: "%.2f € ", price))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat").font(.footnote)
+            self.priceText = Text("ab ").font(.footnote) + Text("\(String(format: "%.2f € ", prices[0]-Float(discount)))").fontWeight(.bold).strikethrough() + Text("\(String(format: "%.2f € ", prices[0]))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat").font(.footnote)
         } else {
-            self.priceText = Text("ab ").font(.footnote) +  Text("\(String(format: "%.2f € ", price))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat").font(.footnote)
+            self.priceText = Text("ab ").font(.footnote) +  Text("\(String(format: "%.2f € ", prices[0]))").fontWeight(.bold).foregroundColor(Color("GroverPink")) + Text(" pro Monat").font(.footnote)
         }
         
     }
@@ -74,16 +74,7 @@ struct ItemPillView: View {
                         .stroke(Color("GroverLightGrey"), lineWidth: 2)
                 )
         .fullScreenCover(isPresented: $presentDetails, content: {
-            ProductDetailView(geometry: geometry,
-                              title: title,
-                              description: description,
-                              deal: deal,
-                              price: price,
-                              discount: discount,
-                              category: category,
-                              images: images,
-                              presentDetails: $presentDetails
-            )
+            ProductDetailView(geometry: geometry, product: product, presentDetails: $presentDetails)
         })
     }
 }

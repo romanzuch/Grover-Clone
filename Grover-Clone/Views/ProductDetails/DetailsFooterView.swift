@@ -11,24 +11,19 @@ struct DetailsFooterView: View {
     
     var geometry: GeometryProxy
     var deal: Bool
-    var price: Float
-    var oldPrice: Float
-    var priceText: Text
+    var prices: [Float]
+    var discount: Float
+    var productId: String
     
-    init(geometry: GeometryProxy,
-         deal: Bool,
-         price: Float,
-         discount: Int) {
+    @Binding var selectedDuration: Int
+    
+    init(geometry: GeometryProxy, product: Product, selectedDuration: Binding<Int>) {
         self.geometry = geometry
-        self.deal = deal
-        self.price = price
-        self.oldPrice = price + Float(discount)
-        
-        if deal {
-            self.priceText = Text("\(String(format: "%.2f € ", oldPrice))").font(.title3).fontWeight(.bold).strikethrough() + Text("\(String(format: "%.2f € ", price))").font(.title).fontWeight(.bold).foregroundColor(Color("GroverPink"))
-        } else {
-            self.priceText = Text("\(String(format: "%.2f € ", price))").font(.title).fontWeight(.bold).foregroundColor(Color("GroverPink"))
-        }
+        self.deal = product.deal
+        self.prices = product.prices
+        self.discount = Float(product.discount)
+        self.productId = product.id!
+        self._selectedDuration = selectedDuration
         
     }
     
@@ -40,12 +35,17 @@ struct DetailsFooterView: View {
             
             HStack {
                 VStack(alignment: .leading) {
-                    priceText
+                    if deal {
+//                        PriceTextView(prices: prices, discount: discount, selectedDuration: $selectedDuration)
+                        Text("selected: \(prices[selectedDuration])")
+                    } else {
+                        Text("\(String(format: "%.2f € ", prices[$selectedDuration.wrappedValue]))").font(.title).fontWeight(.bold).foregroundColor(Color("GroverPink"))
+                    }
                     Text("pro Monat für 12 Monate, danach monatlich kündbar")
                         .font(.subheadline).fontWeight(.light)
                 }
                 Spacer()
-                RentButton(productId: price)
+                RentButton(productId: 1.0, selectedDuration: $selectedDuration.wrappedValue)
             }
             .padding()
         }
