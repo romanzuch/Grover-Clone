@@ -38,6 +38,7 @@
 		30BD476F264853760079DD2D /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD476E264853760079DD2D /* Products.swift */; };
 		30CF655E264E627300C4B64D /* CategoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF655D264E627300C4B64D /* CategoryPageView.swift */; };
 		30CF6560264E6EFB00C4B64D /* HeaderMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF655F264E6EFB00C4B64D /* HeaderMenuButton.swift */; };
+		30F03C9D265EA002006DBAD5 /* TemporaryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F03C9C265EA002006DBAD5 /* TemporaryImageCache.swift */; };
 		30F191D8264987A400EEB454 /* ProductsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F191D7264987A400EEB454 /* ProductsRepository.swift */; };
 		30F191DA264990CF00EEB454 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 30F191D9264990CF00EEB454 /* .gitignore */; };
 		AB9A4D90D8967FD321795E50 /* Pods_Grover_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048384682C18E9BDECFE4DED /* Pods_Grover_Clone.framework */; };
@@ -81,6 +82,7 @@
 		30BD476E264853760079DD2D /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		30CF655D264E627300C4B64D /* CategoryPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPageView.swift; sourceTree = "<group>"; };
 		30CF655F264E6EFB00C4B64D /* HeaderMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMenuButton.swift; sourceTree = "<group>"; };
+		30F03C9C265EA002006DBAD5 /* TemporaryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryImageCache.swift; sourceTree = "<group>"; };
 		30F191D7264987A400EEB454 /* ProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRepository.swift; sourceTree = "<group>"; };
 		30F191D9264990CF00EEB454 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +187,7 @@
 				307462E7264807C4005C52A7 /* ViewRouter.swift */,
 				30F191D7264987A400EEB454 /* ProductsRepository.swift */,
 				309A9407265256CA00934A64 /* ImageLoader.swift */,
+				30F03C9C265EA002006DBAD5 /* TemporaryImageCache.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				30746304264820B6005C52A7 /* FooterButton.swift in Sources */,
 				309A940D26525ECA00934A64 /* ImageLoaderPlaceholder.swift in Sources */,
 				307462E8264807C4005C52A7 /* ViewRouter.swift in Sources */,
+				30F03C9D265EA002006DBAD5 /* TemporaryImageCache.swift in Sources */,
 				3074630E26483D81005C52A7 /* ProductDetailView.swift in Sources */,
 				30B20AD826485AE70055A278 /* DetailsFooterView.swift in Sources */,
 				307462FB26480D01005C52A7 /* HeaderView.swift in Sources */,
