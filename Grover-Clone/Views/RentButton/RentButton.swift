@@ -10,14 +10,17 @@ import SwiftUI
 struct RentButton: View {
     
     var productId: String
+    var selectedDuration: Int
     
-    init(productId: Float) {
+    init(productId: Float, selectedDuration: Int) {
         self.productId = String(productId)
+        self.selectedDuration = selectedDuration
     }
     
     var body: some View {
         Button(action: {
             print(productId)
+            print(selectedDuration)
         }, label: {
             Text("Mieten")
                 .fontWeight(.bold)
