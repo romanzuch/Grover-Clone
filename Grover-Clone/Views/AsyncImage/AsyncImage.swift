@@ -14,7 +14,7 @@ struct AsyncImage<Placeholder: View>: View {
     
     init(url: URL, @ViewBuilder placeholder: () -> Placeholder) {
         self.placeholder = placeholder()
-        _loader = StateObject(wrappedValue: ImageLoader(url: url))
+        _loader = StateObject(wrappedValue: ImageLoader(url: url, cache: Environment(\.imageCache).wrappedValue))
     }
     
     var body: some View {
