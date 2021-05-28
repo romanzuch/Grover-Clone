@@ -36,13 +36,30 @@ struct DetailsFooterView: View {
             HStack {
                 VStack(alignment: .leading) {
                     if deal {
-//                        PriceTextView(prices: prices, discount: discount, selectedDuration: $selectedDuration)
-                        Text("selected: \(prices[selectedDuration])")
+                        HStack {
+                            Text("\(String(format: "%.2f € ", prices[selectedDuration]-Float(discount)))").fontWeight(.bold).strikethrough()
+                            Text("\(String(format: "%.2f € ", prices[selectedDuration]))").font(.title).fontWeight(.bold).foregroundColor(Color("GroverPink"))
+                        }
                     } else {
                         Text("\(String(format: "%.2f € ", prices[$selectedDuration.wrappedValue]))").font(.title).fontWeight(.bold).foregroundColor(Color("GroverPink"))
                     }
-                    Text("pro Monat für 12 Monate, danach monatlich kündbar")
-                        .font(.subheadline).fontWeight(.light)
+                    switch selectedDuration {
+                    case 0:
+                        Text("pro Monat für 12 Monate, danach monatlich kündbar")
+                            .font(.subheadline).fontWeight(.light)
+                    case 1:
+                        Text("pro Monat für 6 Monate, danach monatlich kündbar")
+                            .font(.subheadline).fontWeight(.light)
+                    case 2:
+                        Text("pro Monat für 3 Monate, danach monatlich kündbar")
+                            .font(.subheadline).fontWeight(.light)
+                    case 3:
+                        Text("pro Monat für 1 Monat, danach monatlich kündbar")
+                            .font(.subheadline).fontWeight(.light)
+                    default:
+                        Text("pro Monat für 1 Monat, danach monatlich kündbar")
+                            .font(.subheadline).fontWeight(.light)
+                    }
                 }
                 Spacer()
                 RentButton(productId: 1.0, selectedDuration: $selectedDuration.wrappedValue)
