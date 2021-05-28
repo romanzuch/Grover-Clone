@@ -61,8 +61,6 @@ struct ProductDetailView: View {
             
             Spacer()
             
-            Text("\(selectedDuration)")
-            
             DetailsFooterView(geometry: geometry, product: product, selectedDuration: $selectedDuration)
                 .frame(width: geometry.size.width, height: geometry.size.height/10)
         }
