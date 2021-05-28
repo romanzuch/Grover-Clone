@@ -71,7 +71,9 @@ struct ProductDetailsPillView: View {
             
             Text("Wähle eine Mindestmietdauer")
             
-            RentingDurationPicker(prices: prices, selectedDuration: $selectedDuration)
+            RentingDurationPicker(prices: prices, geometry: geometry, selectedDuration: $selectedDuration)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 24)
         }
         .padding()
         .background(Color.white)
