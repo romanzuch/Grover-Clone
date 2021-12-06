@@ -27,9 +27,6 @@ struct HomeView: View {
                 ForEach(products, id: \.self) { product in
                     ItemPillView(geometry: geometry, product: product)
                     .padding(.vertical, 6)
-                        .onAppear {
-                            print(product.id)
-                        }
                 }
                 .padding(.horizontal, 12)
             }
