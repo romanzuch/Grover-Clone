@@ -28,13 +28,11 @@ struct HomeAdView: View {
             .padding(12)
             
             HStack {
-                Button(action: {
-                    print("Deals entdecken")
-                }, label: {
+                Link(destination: URL(string: "https://www.grover.com/de-de")!) {
                     Text("Deals entdecken")
                         .fontWeight(.bold)
                         .padding()
-                })
+                }
                 .background(Color("GroverPink"))
                 .foregroundColor(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 12.0, style: .continuous))
