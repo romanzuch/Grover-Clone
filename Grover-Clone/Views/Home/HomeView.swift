@@ -24,6 +24,8 @@ struct HomeView: View {
                 HomeAdView(geometry: geometry)
                     .padding(.horizontal, 12)
                     .padding(.top, 24)
+                // divider "Dein Feed ---"
+                FeedHeader()
                 ForEach(products, id: \.self) { product in
                     ItemPillView(geometry: geometry, product: product)
                     .padding(.vertical, 6)
